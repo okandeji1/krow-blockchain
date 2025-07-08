@@ -76,7 +76,7 @@ contract Crowdfunding {
         emit Withdrawal(owner, amount);
     }
 
-    function refund() external {
+    function refund() external onlyOwner {
         require(
             block.timestamp >= deadline,
             "Refunds available after deadline"
